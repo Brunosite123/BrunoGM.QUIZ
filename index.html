@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Bruno Gemo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+    /* ===== RESET ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        border: none;
+        outline: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #222;
+        color: white;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #e7d2d2;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    header .logo:hover { transform: scale(1.1); }
+
+    header nav a {
+        margin-left: 20px;
+        color: white;
+        font-size: 16px;
+        border-bottom: 3px solid transparent;
+        transition: 0.3s;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+        color: #00c3ff;
+        border-bottom: 3px solid #00c3ff;
+    }
+    #evalForm textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 16px;
+}
+
+#evalForm button {
+    margin-top: 10px;
+}
+
+    /* ===== SECTIONS ===== */
+    section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding: 100px 20px 50px 20px; /* espaço para header */
+        color: white;
+        background-size: cover;
+        background-position: center;
+    }
+
+    section::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 0;
+    }
+
+    .section-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+    }
+
+    h1 { font-size: 4rem; margin-bottom: 1rem; }
+    h1 span { color: #00c3ff; }
+    h3 { font-size: 2.5rem; margin-bottom: 1rem; }
+    p { font-size: 1.2rem; margin-bottom: 20px; }
+
+    /* ===== BUTTON ===== */
+    .btn {
+        display: inline-block;
+        padding: 10px 25px;
+        background: #00c3ff;
+        color: white;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: white;
+        color: #00c3ff;
+    }
+
+    /* ===== SOCIAL ICONS ===== */
+    .social-icons { margin: 20px 0; }
+    .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        font-size: 20px;
+        color: white;
+        border: 0.2rem solid whitesmoke;
+        border-radius: 50%;
+        margin: 1rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .social-icons a::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        border-radius: 50%;
+        background: #00aaff;
+        opacity: 0;
+        z-index: 0;
+        transition: 0.3s;
+    }
+
+    .social-icons a:hover::before { opacity: 1; }
+    .social-icons a i { position: relative; z-index: 1; }
+    .social-icons a:hover {
+        transform: scale(1.3) translateY(-5px);
+        box-shadow: 0 0 15px #00aaff;
+    }
+
+    /* ===== TYPING EFFECT ===== */
+    .typing-text {
+        font-size: 34px;
+        font-weight: 600;
+    }
+
+    .typing-text span {
+        position: relative;
+        color: #00c3ff;
+        border-right: 3px solid #00aaff;
+        padding-right: 5px;
+        animation: blink 0.7s steps(1) infinite;
+    }
+
+    @keyframes blink {
+        0%, 50%, 100% { border-color: #00aaff; }
+        25%, 75% { border-color: transparent; }
+    }
+</style>
+</head>
+
+<body>
+<header>
+    <a href="#" class="logo">Bruno Gemo</a>
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#education">Educação</a>
+        <a href="#preferences">Preferências</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<!-- ===== HOME ===== -->
+<section id="home" style="background-image: url('https://drive.google.com/uc?export=view&id=11fvmz-BIotzpO0_W-Ksjtbl1HWh2BW1x')">
+    <div class="section-content">
+        <h1>O meu <span>Curriculum Vitae</span></h1>
+        <h3 class="typing-text">Eu sou <span id="typing"></span></h3>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="evaluation">
+        <a href="#" class="btn" id="evalBtn">Avalia-me</a>
+         <div id="evalForm" style="display:none; margin-top:20px;">
+        <textarea id="userEval" rows="4" cols="50" placeholder="Escreva sua avaliação aqui..."></textarea><br>
+        <button id="sendEval" class="btn">Enviar Avaliação</button>
+    </div>
+    </div>
+</section>
+
+<!-- ===== HABILIDADES ===== -->
+<section id="skills" style="background-image: url('https://picsum.photos/1200/800?blur=2')">
+    <div class="section-content">
+        <h1>Minhas <span>Habilidades</span></h1>
+        <p>• Programação em HTML, CSS e JavaScript.<br>
+           •Experiencia em jogar Basquetebol<br>
+           • Desenvolvimento de websites responsivos.<br>
+           • Trabalho em equipe e resolução de problemas.</p>
+    </div>
+</section>
+
+<!-- ===== EDUCAÇÃO ===== -->
+<section id="education" style="background-image: url('https://picsum.photos/1200/800?blur=4')">
+    <div class="section-content">
+        <h1>Minha <span>Educação</span></h1>
+        <p>• Oitava classe em curso.<br>
+           • Cursos de Programação Online: HTML, CSS, JavaScript.<br>
+           • Iniciante a desenho<br>
+           • Experiente em ediçao de videos</p>
+    </div>
+</section>
+
+<!-- ===== PREFERÊNCIAS ===== -->
+<section id="preferences" style="background-image: url('https://picsum.photos/1200/800?blur=6')">
+    <div class="section-content">
+        <h1>Minhas <span>Preferências</span></h1>
+        <p>• Gosto de desenvolver projetos criativos.<br>
+           • Interesse por esportes e games.<br>
+           • Amo Basquetebol e tecnologia.
+           <br>•Gosto de lasanha</p>
+    </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contact" style="background-image: url('https://picsum.photos/1200/800?blur=8')">
+    <div class="section-content">
+        <h1>Entre em <span>Contacto</span></h1>
+        <p>• Email: brunogemo@gmail.com<br>
+           • Telefone: +258 86 96 19 800<br>
+           • LinkedIn: linkedin.com/in/brunogemo<br>
+           •GitHub:BrunoSite123<br>
+           •Instagram:@Brunocvx</p>
+        <a href="#" class="btn">Enviar Mensagem</a>
+    </div>
+</section>
+
+<!-- ===== TYPING JS ===== -->
+<script>
+    const words = ["Mini programador", "Bonito", "Jogador", "Inteligente", "Amante do Barcelona❤️"];
+    let i = 0;
+    const typingSpan = document.getElementById("typing");
+
+    function changeWord() {
+        typingSpan.textContent = words[i];
+        i++;
+        if(i >= words.length) i = 0;
+    }
+
+    changeWord();
+    setInterval(changeWord, 2000);
+    const evalBtn = document.getElementById('evalBtn');
+    const evalForm = document.getElementById('evalForm');
+    const sendEval = document.getElementById('sendEval');
+    const userEval = document.getElementById('userEval');
+
+    // Mostrar textarea ao clicar no botão
+    evalBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        evalForm.style.display = 'block';
+        userEval.focus();
+    });
+
+    // Enviar avaliação
+    sendEval.addEventListener('click', function(){
+        if(userEval.value.trim() === ""){
+            alert("Por favor, escreva sua avaliação antes de enviar.");
+        } else {
+            alert("Sua avaliação foi enviada! 👍");
+            userEval.value = ""; // limpa o textarea
+            evalForm.style.display = 'none'; // esconde novamente
+        }
+    });
+</script>
+</body>
+</html>
